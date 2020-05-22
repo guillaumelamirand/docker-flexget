@@ -10,7 +10,8 @@ RUN       adduser -D flexget
 RUN       ln -s /config /home/flexget/.flexget
 
 # Install FlexGet
-RUN       apk add -U tzdata && \
+RUN       apk add -U tzdata \
+                     curl && \
           pip3 install -U pip  && \
           pip3 install --no-cache-dir flexget transmissionrpc && \
           rm -rf /var/cache/apk/* \
